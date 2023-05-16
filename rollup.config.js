@@ -11,7 +11,6 @@ const options = {
   output: {
     dir: './www/',
     format: 'cjs',
-    sourcemap: 'inline',
   },
   external: ['cordova'],
   plugins: [

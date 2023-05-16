@@ -17,13 +17,12 @@
   "author": "Florian Biebel",
   "license": "MIT",
   "main": "www/BarcodeScanner.contract.js",
-  "prettier": "@teckel.ts-internal/prettier-config",
   "engines": {
     "node": ">=10.0.0"
   },
   "scripts": {
-    "build": "npm run lint && npm run clean && npm run transpile",
-    "clean": "mkdir -p 'www' && find 'www' ! -path 'www' -delete",
+    "build": "npm run clean && npm run transpile",
+    "clean": "rm -rf www",
     "lint": "eslint . --ext .js,.ts --cache && tsc -p tsconfig.lint.json",
     "test": "echo \"Error: no test specified\" && exit 1",
     "transpile": "rollup --config --silent",
@@ -39,15 +38,9 @@
     "url": "https://github.com/MobisysGmbH/cordova-plugin-mlkit-barcode-scanner.git"
   },
   "homepage": "https://github.com/MobisysGmbH/cordova-plugin-mlkit-barcode-scanner#readme",
-  "publishConfig": {
-    "registry": "https://pkgs.dev.azure.com/mobisysgmbh/_packaging/mobisys/npm/registry/"
-  },
   "devDependencies": {
     "@rollup/plugin-commonjs": "20.0.0",
     "@rollup/plugin-node-resolve": "13.0.4",
-    "@teckel.ts-internal/eslint-config": "3.0.0",
-    "@teckel.ts-internal/prettier-config": "1.0.0",
-    "@teckel.ts-internal/ts-config": "2.0.1",
     "@types/cordova": "0.0.34",
     "@types/node": "16.7.1",
     "eslint": "7.32.0",

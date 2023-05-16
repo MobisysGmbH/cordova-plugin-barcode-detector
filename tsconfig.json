@@ -1,5 +1,4 @@
 {
-  "extends": "@teckel.ts-internal/ts-config/tsconfig.json",
   "include": [
     "./**/.eslintrc.js",
     "./rollup.config.js",

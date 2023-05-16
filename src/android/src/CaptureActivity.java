@@ -255,6 +255,16 @@ public class CaptureActivity extends AppCompatActivity implements SurfaceHolder.
 
   }
 
+  @Override
+  public void onBackPressed() {
+    Intent intent = new Intent();
+    intent.putExtra("err", "USER_CANCELLED");
+    setResult(CommonStatusCodes.CANCELED, intent);
+
+    super.onBackPressed();
+    finish();
+  }
+
   void startCamera() {
     mCameraView = findViewById(getResources().getIdentifier("previewView", "id", getPackageName()));
     mCameraView.setPreferredImplementationMode(PreviewView.ImplementationMode.TEXTURE_VIEW);
